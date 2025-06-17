@@ -1,4 +1,3 @@
-
 // DOM Elements
 const openModalBtn = document.getElementById('openModal');
 const navCTA = document.getElementById('navCTA');
@@ -97,61 +96,6 @@ document.addEventListener('keydown', (e) => {
         if (termsModal.classList.contains('active')) {
             closeTermsOfService();
         }
-    }
-});
-
-
-// DOM Elements
-const openModalBtn = document.getElementById('openModal');
-const navCTA = document.getElementById('navCTA');
-const closeModalBtn = document.getElementById('closeModal');
-const modalOverlay = document.getElementById('modalOverlay');
-const modalContainer = document.getElementById('modalContainer');
-const contactForm = document.getElementById('contactForm');
-const selectedPlanInput = document.getElementById('selectedPlan');
-
-// Modal functionality
-function openModal() {
-    modalOverlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    
-    // Focus on first form input after animation
-    setTimeout(() => {
-        document.getElementById('name').focus();
-    }, 300);
-}
-
-function openModalWithPlan(plan) {
-    selectedPlanInput.value = plan;
-    openModal();
-}
-
-function closeModal() {
-    modalOverlay.classList.remove('active');
-    document.body.style.overflow = '';
-    
-    // Reset form when closing
-    contactForm.reset();
-    selectedPlanInput.value = '';
-    removeSuccessMessage();
-}
-
-// Event listeners
-openModalBtn.addEventListener('click', openModal);
-navCTA.addEventListener('click', openModal);
-closeModalBtn.addEventListener('click', closeModal);
-
-// Close modal when clicking outside
-modalOverlay.addEventListener('click', (e) => {
-    if (e.target === modalOverlay) {
-        closeModal();
-    }
-});
-
-// Close modal with Escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
-        closeModal();
     }
 });
 
@@ -374,5 +318,5 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(card);
     });
 });
-console.log('ToMakeSome website loaded successfully!');
+
 console.log('ToMakeSome website loaded successfully!');
